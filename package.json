@@ -1,0 +1,41 @@
+{
+  "name": "@gaplessly/cli",
+  "version": "0.1.0",
+  "description": "Command-line client for the Gaplessly booking API. Read your clients, appointments, reservations and more as JSON.",
+  "keywords": [
+    "gaplessly",
+    "booking",
+    "appointments",
+    "reservations",
+    "api",
+    "cli"
+  ],
+  "homepage": "https://gaplessly.com/docs",
+  "bugs": {
+    "url": "https://github.com/gaplessly/cli/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gaplessly/cli.git"
+  },
+  "license": "MIT",
+  "author": "Gaplessly <hello@gaplessly.com> (https://gaplessly.com)",
+  "type": "module",
+  "bin": {
+    "gaplessly": "bin/gaplessly.js"
+  },
+  "files": [
+    "bin",
+    "src"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test",
+    "check:spec": "node scripts/check-spec.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
