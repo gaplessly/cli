@@ -1,8 +1,11 @@
 name: Publish
 
-# Publishing a GitHub release publishes the package. npm trusted publishing
-# authenticates this workflow over OIDC, so no npm token is stored anywhere,
-# and attaches a provenance statement linking the package to this commit.
+# Publishing a GitHub release STAGES the package on npm; nothing goes live
+# until a maintainer approves it with 2FA (npm stage list, then npm stage
+# approve <id>). npm trusted publishing authenticates this workflow over OIDC,
+# so no npm token is stored anywhere, and the trusted publisher is limited to
+# staging: a compromised workflow or GitHub account cannot ship a version on
+# its own. --provenance links the package to the commit it was built from.
 on:
   release:
     types: [published]
@@ -20,10 +23,10 @@ jobs:
         with:
           node-version: 24
           registry-url: https://registry.npmjs.org
-      # Trusted publishing needs npm 11.5.1 or later.
+      # Trusted publishing needs npm 11.5.1 or later; npm stage is newer still.
       - run: npm install -g npm@latest
       - name: Release tag must match package.json
         run: test "v$(node -p "require('./package.json').version")" = "$GITHUB_REF_NAME"
       - run: npm test
       - run: npm run check:spec
-      - run: npm publish
+      - run: npm stage publish --provenance

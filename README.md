@@ -105,7 +105,7 @@ Each key gets 120 requests a minute by default. On a `429` the CLI waits for the
 - The key is read from `GAPLESSLY_API_KEY` only, never from a flag, so it stays out of your shell history. It is sent only in the `Authorization` header and never printed.
 - The CLI refuses to send a key over plain HTTP to anything but your own machine.
 - No dependencies and no telemetry.
-- Releases are published from this repository by GitHub Actions, with [npm provenance](https://docs.npmjs.com/generating-provenance-statements).
+- Releases are built from this repository by GitHub Actions, with [npm provenance](https://docs.npmjs.com/generating-provenance-statements), and staged: a new version goes live only after a maintainer approves it with two-factor authentication.
 
 Found a security issue? Email [hello@gaplessly.com](mailto:hello@gaplessly.com) rather than opening a public issue.
 
