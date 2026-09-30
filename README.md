@@ -1,13 +1,4 @@
-<p align="center">
-  <a href="https://gaplessly.com">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="./.github/assets/gaplessly-logo-dark.svg">
-      <img src="./.github/assets/gaplessly-logo-light.svg" alt="Gaplessly" height="48">
-    </picture>
-  </a>
-</p>
-
-<h3 align="center">Command-line client for the Gaplessly booking API</h3>
+<a href="https://gaplessly.com/docs"><img src="https://raw.githubusercontent.com/gaplessly/cli/main/.github/assets/banner.png" alt="Gaplessly CLI: command-line client for the Gaplessly booking API" width="100%"></a>
 
 <p align="center">
   <a href="https://www.npmjs.com/package/@gaplessly/cli"><img alt="npm" src="https://img.shields.io/npm/v/%40gaplessly%2Fcli?style=flat-square&color=0d647f"></a>
